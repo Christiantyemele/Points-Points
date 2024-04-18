@@ -1,0 +1,71 @@
+:root {
+    --len: 0;
+    --wit: 0;
+    --color: 'red';
+}
+
+.square {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    z-index: 15;
+    margin: -180px 0 0 -280px;
+    width: 640px;
+    height: 490px;
+    background-color: black;
+    border: 2px solid black;
+
+}
+
+.col {
+    width: 40px;
+    height: 30px;
+    background-color: blueviolet;
+    border: 1px solid white;
+
+}
+
+.row {
+    display: flex;
+}
+
+.edge-div {
+    position: absolute;
+    width: 10px; /* adjust as needed */
+    height: 8px; /* adjust as needed */
+    background-color: #ff0000;
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.edge-column {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    color: blue;
+    float: left;
+
+}
+
+.edge-row {
+    display: flex;
+    float: left;
+    margin: 1px;
+}
+
+.point {
+    position: absolute;
+    width: 6px; /* adjust as needed */
+    height: 5px; /* adjust as needed */
+    background-color: transparent;
+    display: flex;
+    left: auto;
+    float: left;
+    margin: -4px;
+    border-radius: 25px;
+
+}
