@@ -69,3 +69,28 @@
     border-radius: 25px;
 
 }
+.topDiv {
+    top: 30px;
+   display: flex;
+   position: relative;
+
+}
+
+.bottomDiv {
+    bottom: 30px;
+   display: flex;
+   position: relative;
+}
+
+.leftDiv {
+
+    left: 30px;
+    display: flex;
+    position: relative;
+
+}
+.rightDiv {
+    right: 30px;
+ display: flex;
+  position: relative;
+}

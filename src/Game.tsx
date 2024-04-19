@@ -18,4 +18,3 @@ export default function GameManager() {
     });
     return null
 }
-

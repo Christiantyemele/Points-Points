@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from "react";
+import { useState } from "react";
 
 export default function Board() {
     const [color, setColor] = useState('red')
@@ -19,10 +19,12 @@ export default function Board() {
                 );
             }
             board.push(
-                <div key={row} className="row">
-                    {rowCells}
-                </div>
+                <>
+                    <div key={row} className="row">
+                        {rowCells}
+                    </div>
 
+                </>
             );
         }
         return board;
@@ -30,17 +32,23 @@ export default function Board() {
 
     const renderPoint = (div_iD: string[]) => {
         return (
-            <div className="point"  onClick={(event) => handleClick(event, div_iD)}>
-            </div>
+            <>
+                <div className="point" onClick={(event) => handleClick(event, div_iD)}>
+                </div>
+                <div className="point leftDiv"></div>
+                <div className="point bottomDiv"></div>
+                <div className="point topDiv"></div>
+            </>
 
         );
     };
-
-    const handleClick = (event: React.MouseEvent<HTMLDivElement>, div_iD : string[]) => {
-     const element = event.target as HTMLElement;
-        (element.style.background === 'red') ? element.style.background = 'red' : element.style.background = color  &&
-        (element.style.background === 'blue') ? element.style.background = 'blue' : element.style.background = color
-        setColor(color ==='red'? 'blue' :'red');
+    const red = []
+    const blue = []
+    const handleClick = (event: React.MouseEvent<HTMLDivElement>, div_iD: string[]) => {
+        const element = event.target as HTMLElement;
+        (element.style.background === 'red') ? element.style.background = 'red' : element.style.background = color &&
+            (element.style.background === 'blue') ? element.style.background = 'blue' : element.style.background = color
+        setColor(color === 'red' ? 'blue' : 'red');
 
         div_iD.forEach((div) => {
             var div_element = document.getElementById(div) as HTMLDivElement;
@@ -49,15 +57,25 @@ export default function Board() {
 
             list_of_points.forEach((list_of_point) => {
                 var point_div = list_of_point as HTMLDivElement;
-                if (point_div.style.backgroundColor === 'red')
-                    div_element.style.borderColor = "red";
-    });
+                if (point_div.style.backgroundColor === 'red') {
+                    red.push(point_div.style.backgroundColor);
+                    if (red.length >= 4)
+                        div_element.style.borderColor = "red";
+                } else if (point_div.style.backgroundColor === 'blue') {
+                    red.push(point_div.style.backgroundColor);
+                    if (blue.length >= 4)
+                        div_element.style.borderColor = "red";
+
+                };
+
+            });
         });
     }
-    return (
-        <div className="square">
-            {renderBoard()}
-        </div>
-    );
-}
+            return (
+                <div className="square">
+                    {renderBoard()}
+                </div>
+            );
 
+              
+    };
