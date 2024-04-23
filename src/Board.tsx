@@ -63,42 +63,52 @@ export default function Board() {
         var bottom_right2 = document.querySelector(`#div-${x}-${y - 1}>.point`) as HTMLDivElement;
 
         // top_left check
-        var bottom_left3 = document.querySelector(`#div-${x - 1}-${y}>.point`) as HTMLDivElement;
-        var top_left3 = document.querySelector(`#div-${x - 1}-${y + 1}>.point`) as HTMLDivElement;
-        var top_right3 = document.querySelector(`#div-${x}-${y + 1}>.point`) as HTMLDivElement;
+        var bottom_left3 = document.querySelector(`#div-${x + 1}-${y}>.point`) as HTMLDivElement;
+        var top_left3 = document.querySelector(`#div-${x}-${y+1}>.point`) as HTMLDivElement;
+        var top_right3 = document.querySelector(`#div-${x+1}-${y + 1}>.point`) as HTMLDivElement;
 
         // top_ right check
-        var bottom_right4 = document.querySelector(`#div-${x + 1}-${y}>.point`) as HTMLDivElement;
-        var top_left4 = document.querySelector(`#div-${x}-${y + 1}>.point`) as HTMLDivElement;
-        var top_right4 = document.querySelector(`#div-${x + 1}-${y + 1}>.point`) as HTMLDivElement;
+       var bottom_left4 = document.querySelector(`#div-${x - 1}-${y}>.point`) as HTMLDivElement;
+        var top_left4 = document.querySelector(`#div-${x-1}-${y + 1}>.point`) as HTMLDivElement;
+        var top_right4 = document.querySelector(`#div-${x}-${y + 1}>.point`) as HTMLDivElement;
 
-            const validation = ( element.style.background === 'red' &&
-                bottom_right1?.style.background === 'red' &&
-                bottom_left1.style.background === 'red' &&
-                top_right1?.style.background === 'red' ||
+        if (element.style.background === color &&
+            bottom_right1?.style.background === color &&
+            bottom_left1.style.background === color &&
+            top_right1?.style.background === color) {
+            var big_div1 = document.getElementById(`div-${x}-${y}`) as HTMLDivElement;
+            big_div1.style.border = '1px solid ' + color
+        }
 
-                element.style.background === 'red' &&
-                bottom_left2?.style.background === 'red' &&
-                top_left2.style.background === 'red' &&
-                bottom_right2.style.background === 'red' ||
+        if (element.style.background === color &&
+            bottom_left2?.style.background === color &&
+            top_left2.style.background === color &&
+            bottom_right2.style.background === color) {
+            var big_div2 = document.getElementById(`div-${x-1}-${y}`) as HTMLDivElement;
+            big_div2.style.border = '1px solid ' + color
+        }
 
-                element.style.background === 'red' &&
-                bottom_left3.style.background === 'red' &&
-                top_left3.style.background === 'red' &&
-                top_right3.style.background === 'red' ||
+        if (element.style.background === color &&
+            bottom_left3.style.background === color &&
+            top_left3.style.background === color &&
+            top_right3.style.background === color) {
+            var big_div3 = document.getElementById(`div-${x}-${y+1}`) as HTMLDivElement;
+            big_div3.style.border = '1px solid ' + color
+        }
 
-                element.style.background === 'red' &&
-                bottom_right4.style.background === 'red' &&
-                top_right4.style.background === 'red' &&
-                top_left4?.style.background === 'red'
-               )
-        if  (validation) {
+        if (element.style.background === color &&
+            bottom_left4.style.background === color &&
+            top_right4.style.background === color &&
+            top_left4?.style.background === color
+        ) {
+            var big_div4 = document.getElementById(`div-${x - 1}-${y+1}`) as HTMLDivElement;
+            big_div4.style.border = '1px solid ' + color
+        }
 
-                parent_element.style.border = '2px solid red';
-            }
+
+
 
     }
-
     return (
         <div className="square">
             {renderBoard()}
