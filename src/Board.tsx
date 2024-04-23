@@ -1,90 +1,107 @@
-import React from 'react';
-import { useState } from "react";
+import React, {useState} from 'react';
+
+export type DivPosition = {x: number, y: number}
 
 export default function Board() {
     const [color, setColor] = useState('red')
     const renderBoard = () => {
         const board = [];
-        var div_iD = [];
-        for (let row = 0; row < 17; row++) {
+
+        for (let row = 17; row > 0; --row) {
             const rowCells = [];
+            const div_iD: DivPosition[] = [];
             for (let col = 0; col < 21; col++) {
-                div_iD.push(`div_${row}_${col}`);
+                const divId = `div-${col}-${row}`
+                div_iD.push({x: col, y: row});
                 rowCells.push(
-                    <div key ={`${row}_${col}`}  id={`div_${row}_${col}`} className="col">
+                    <div id={divId} className="col">
                         {renderPoint(div_iD)}
                     </div>
                 );
             }
             board.push(
-                    <div key={row} className="row">
-                        {rowCells}
-                    </div>
+                <div key={row} className="row">
+                    {rowCells}
+                </div>
             );
         }
         return board;
     };
 
-    const renderPoint = (div_iD: string[]) => {
-            return (
-                <>
-                    <div key={`${div_iD}_point`} className="point" onClick={(event) => handleClick(event, div_iD)}>
-                          </div>
+    const renderPoint = (div_iD: DivPosition[]) => {
+        return (
+            <>
+                <div className="point" onClick={(event) => handleClick(event, div_iD)}>
+                </div>
 
-                   
-                   
-                </>
-            );
-        
-            }
-    var position:DOMRect[] = []
+            </>
+        );
+    };
 
-    const PointArray: HTMLElement[] = Array.from(document.getElementsByClassName("point") as HTMLCollectionOf<HTMLElement>);
-
-    const handleClick = (event: React.MouseEvent<HTMLDivElement>, div_iD: string[]) => {
-        const element = event.target as HTMLDivElement;
+    const handleClick = (event: React.MouseEvent<HTMLDivElement>, div_iD: DivPosition[]) => {
+        const element = event.target as HTMLElement;
         (element.style.background === 'red') ? element.style.background = 'red' : element.style.background = color &&
         (element.style.background === 'blue') ? element.style.background = 'blue' : element.style.background = color
         setColor(color === 'red' ? 'blue' : 'red');
 
-        div_iD.forEach((div) => {
-            var div_element = document.getElementById(div) as HTMLDivElement;
+        const parent_element = element.parentElement as HTMLDivElement;
+        const currentId = parent_element.getAttribute("id") as string;
+        const [, xStr, yStr] = currentId.split("-");
+        const x = Number(xStr);
+        const y = Number(yStr);
+        console.log(x, y);
+        var div_element = document.getElementById(`div-${x}-${y}`) as HTMLDivElement;
 
-            var div_Rec = div_element.getBoundingClientRect();
-            var point_Rec = element.getBoundingClientRect();
+        // bottom-right check
+        var top_right1 = document.querySelector(`#div-${x + 1}-${y}>.point`) as HTMLDivElement;
+        var bottom_left1 = document.querySelector(`#div-${x}-${y - 1}>.point`) as HTMLDivElement;
+        var bottom_right1 = document.querySelector(`#div-${x + 1}-${y - 1}>.point`) as HTMLDivElement;
 
+        //bottom-left check
+        var bottom_left2 = document.querySelector(`#div-${x - 1}-${y - 1}>.point`) as HTMLDivElement;
+        var top_left2 = document.querySelector(`#div-${x - 1}-${y}>.point`) as HTMLDivElement;
+        var bottom_right2 = document.querySelector(`#div-${x}-${y - 1}>.point`) as HTMLDivElement;
 
-            if (div_Rec.top <= point_Rec.bottom && div_Rec.bottom >= point_Rec.top && div_Rec.left <= point_Rec.right && div_Rec.right >= point_Rec.left) {
-                div_element.style.borderColor = "red";
+        // top_left check
+        var bottom_left3 = document.querySelector(`#div-${x - 1}-${y}>.point`) as HTMLDivElement;
+        var top_left3 = document.querySelector(`#div-${x - 1}-${y + 1}>.point`) as HTMLDivElement;
+        var top_right3 = document.querySelector(`#div-${x}-${y + 1}>.point`) as HTMLDivElement;
+
+        // top_ right check
+        var bottom_right4 = document.querySelector(`#div-${x + 1}-${y}>.point`) as HTMLDivElement;
+        var top_left4 = document.querySelector(`#div-${x}-${y + 1}>.point`) as HTMLDivElement;
+        var top_right4 = document.querySelector(`#div-${x + 1}-${y + 1}>.point`) as HTMLDivElement;
+
+            const validation = ( element.style.background === 'red' &&
+                bottom_right1?.style.background === 'red' &&
+                bottom_left1.style.background === 'red' &&
+                top_right1?.style.background === 'red' ||
+
+                element.style.background === 'red' &&
+                bottom_left2?.style.background === 'red' &&
+                top_left2.style.background === 'red' &&
+                bottom_right2.style.background === 'red' ||
+
+                element.style.background === 'red' &&
+                bottom_left3.style.background === 'red' &&
+                top_left3.style.background === 'red' &&
+                top_right3.style.background === 'red' ||
+
+                element.style.background === 'red' &&
+                bottom_right4.style.background === 'red' &&
+                top_right4.style.background === 'red' &&
+                top_left4?.style.background === 'red'
+               )
+        if  (validation) {
+
+                parent_element.style.border = '2px solid red';
             }
 
-
-                  console.log(div_element)
-                   var list_of_points = div_element.querySelectorAll('.point');
-
-                   list_of_points.forEach((list_of_point) => {
-                       var point_div = list_of_point as HTMLDivElement;
-                       if (point_div.style.backgroundColor === 'red') {
-                           red.push(point_div.style.backgroundColor);
-                           if (red.length > 4)
-                               div_element.style.borderColor = "red";
-                       } else if (point_div.style.backgroundColor === 'blue') {
-                           red.push(point_div.style.backgroundColor);
-                           if (blue.length > 4)
-                               div_element.style.borderColor = "red";
-
-                       };
-
-                   });
-               });
-           }
-
     }
-        return (
-            <div className="square">
-                {renderBoard()}
-            </div>
-        );
 
-
-    };
+    return (
+        <div className="square">
+            {renderBoard()}
+        </div>
+    );
+}
