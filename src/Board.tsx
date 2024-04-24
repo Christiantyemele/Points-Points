@@ -50,7 +50,6 @@ export default function Board() {
         const x = Number(xStr);
         const y = Number(yStr);
         console.log(x, y);
-        var div_element = document.getElementById(`div-${x}-${y}`) as HTMLDivElement;
 
         // bottom-right check
         var top_right1 = document.querySelector(`#div-${x + 1}-${y}>.point`) as HTMLDivElement;
@@ -97,8 +96,8 @@ export default function Board() {
         }
 
         if (element.style.background === color &&
-            bottom_left4.style.background === color &&
-            top_right4.style.background === color &&
+            bottom_left4?.style.background === color &&
+            top_right4?.style.background === color &&
             top_left4?.style.background === color
         ) {
             var big_div4 = document.getElementById(`div-${x - 1}-${y+1}`) as HTMLDivElement;
