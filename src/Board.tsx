@@ -81,7 +81,7 @@ export default function Board() {
 
         if (element.style.background === color &&
             bottom_left2?.style.background === color &&
-            top_left2.style.background === color &&
+            top_left2?.style.background === color &&
             bottom_right2.style.background === color) {
             var big_div2 = document.getElementById(`div-${x-1}-${y}`) as HTMLDivElement;
             big_div2.style.border = '1px solid ' + color
@@ -89,7 +89,7 @@ export default function Board() {
 
         if (element.style.background === color &&
             bottom_left3.style.background === color &&
-            top_left3.style.background === color &&
+            top_left3?.style.background === color &&
             top_right3.style.background === color) {
             var big_div3 = document.getElementById(`div-${x}-${y+1}`) as HTMLDivElement;
             big_div3.style.border = '1px solid ' + color

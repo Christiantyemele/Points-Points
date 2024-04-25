@@ -12,12 +12,12 @@ and (min-resolution: 192dpi) {
 
     .square {
         position: absolute;
-        top: 45%;
-        left: 45.5%;
+        top: 46%;
+        left: 44.5%;
         z-index: 15;
         margin: -180px 0 0 -280px;
-        width: 670px;
-        height: 540px;
+        width: 680px;
+        height: 560px;
         background-color: transparent;
     }
     .col {
@@ -74,7 +74,7 @@ and (min-resolution: 192dpi) {
         display: flex;
         justify-content: left;
         align-items: center;
-        height: 40vh; /* Set the height to 40% of the viewport height */
+        height: 45vh; /* Set the height to 40% of the viewport height */
     }
 
     .centered {
