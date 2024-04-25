@@ -2,95 +2,141 @@
     --len: 0;
     --wit: 0;
     --color: 'red';
+    --size-divisor: 3;
 }
+@media screen
+and (min-device-width: 120px)
+and (max-device-width: 160px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) {
 
-.square {
-    position: absolute;
-    top: 40%;
-    left: 47%;
-    z-index: 15;
-    margin: -180px 0 0 -280px;
-    width: 640px;
-    height: 490px;
-    background-color: black;
-    border: 2px solid black;
+    .square {
+        position: absolute;
+        top: 45%;
+        left: 45.5%;
+        z-index: 15;
+        margin: -180px 0 0 -280px;
+        width: 670px;
+        height: 540px;
+        background-color: transparent;
+    }
+    .col {
+        width: 40px;
+        height: 30px;
+        background-color: blueviolet;
+        border: 1px solid white;
 
+    }
+    .row {
+        display: flex;
+    }
+
+    .edge-div {
+        position: absolute;
+        width: 10px; /* adjust as needed */
+        height: 8px; /* adjust as needed */
+        background-color: #ff0000;
+        color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .edge-column {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #ff0000;
+        color: blue;
+        float: left;
+    }
+
+    .edge-row {
+        display: flex;
+        float: left;
+        margin: 1px;
+    }
+
+    .point {
+        position: absolute;
+        width: 6px; /* adjust as needed */
+        height: 5px; /* adjust as needed */
+        background-color: transparent;
+        display: flex;
+        left: auto;
+        float: left;
+        margin: -4px;
+        border-radius: 25px;
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 40vh; /* Set the height to 40% of the viewport height */
+    }
+
+    .centered {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 0;
+        margin-left: 100px; /* Adjusted margin for computers */
+        padding: 10px; /* Add some padding */
+    }
 }
+@media screen and (max-width: 768px) {
+    .square {
+        width: 90%; /* Adjust square width for smaller screens */
+        height: auto; /* Auto height */
+        margin: 0; /* Remove margin */
+        left: 50%; /* Center horizontally */
+        top: 50%; /* Center vertically */
+        transform: translate(-50%, -50%); /* Center square */
+    }
 
-.col {
-    width: 40px;
-    height: 30px;
-    background-color: blueviolet;
-    border: 1px solid white;
-
+    .centered {
+        left: 10%; /* Adjust left position for smaller screens */
+    }
 }
+/* Smartphones (portrait and landscape) ----------- */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: portrait) {
 
-.row {
-    display: flex;
-}
+    .square {
+        position: absolute;
+        top: 4%;
+        left: 4%;
+        z-index: 3;
+        margin: -1px 0 0 -2px;
+        width: 1px;
+        height: 5px;
+        background-color: transparent;
+    }
 
-.edge-div {
-    position: absolute;
-    width: 10px; /* adjust as needed */
-    height: 8px; /* adjust as needed */
-    background-color: #ff0000;
-    color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .container {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 4vh; /* Set the height to 40% of the viewport height */
+    }
 
-}
+    .centered {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 0;
+        margin-left: 10px; /* Adjusted margin for computers */
+        padding: 10px; /* Add some padding */
+    }
 
-.edge-column {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #ff0000;
-    color: blue;
-    float: left;
+    .col {
+        width: 4px;
+        height: 3px;
+        background-color: white;
+        border: 1px solid white;
 
-}
-
-.edge-row {
-    display: flex;
-    float: left;
-    margin: 1px;
-}
-
-.point {
-    position: absolute;
-    width: 6px; /* adjust as needed */
-    height: 5px; /* adjust as needed */
-    background-color: transparent;
-    display: flex;
-    left: auto;
-    float: left;
-    margin: -4px;
-    border-radius: 25px;
-
-}
-.topDiv {
-    top: 30px;
-   display: flex;
-   position: relative;
-
-}
-
-.bottomDiv {
-    bottom: 30px;
-    display: flex;
-   position: relative;
-}
-
-.leftDiv {
-
-    left: 30px;
-    display: flex;
-    position: relative;
-
-}
-.rightDiv {
-    right: 30px;
- display: flex;
-  position: relative;
+    }
 }
