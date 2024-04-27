@@ -4,13 +4,15 @@ export type DivPosition = {x: number, y: number}
 
 export default function Board() {
     const [color, setColor] = useState('red')
+   let score_blue = 0;
+    let score_red = 0;
     const renderBoard = () => {
         const board = [];
 
-        for (let row = 17; row > 0; --row) {
+        for (let row = 21; row > 0; --row) {
             const rowCells = [];
             const div_iD: DivPosition[] = [];
-            for (let col = 0; col < 21; col++) {
+            for (let col = 0; col < 25; col++) {
                 const divId = `div-${col}-${row}`
                 div_iD.push({x: col, y: row});
                 rowCells.push(
@@ -73,26 +75,32 @@ export default function Board() {
 
         if (element.style.background === color &&
             bottom_right1?.style.background === color &&
-            bottom_left1.style.background === color &&
+            bottom_left1?.style.background === color &&
             top_right1?.style.background === color) {
             var big_div1 = document.getElementById(`div-${x}-${y}`) as HTMLDivElement;
             big_div1.style.border = '1px solid ' + color
+            setColor(color)
+            color === 'red' ? score_red++ : score_blue++;
         }
 
         if (element.style.background === color &&
             bottom_left2?.style.background === color &&
             top_left2?.style.background === color &&
-            bottom_right2.style.background === color) {
+            bottom_right2?.style.background === color) {
             var big_div2 = document.getElementById(`div-${x-1}-${y}`) as HTMLDivElement;
             big_div2.style.border = '1px solid ' + color
+            setColor(color)
+            color === 'red' ? score_red++ : score_blue++;
         }
 
         if (element.style.background === color &&
-            bottom_left3.style.background === color &&
+            bottom_left3?.style.background === color &&
             top_left3?.style.background === color &&
-            top_right3.style.background === color) {
+            top_right3?.style.background === color) {
             var big_div3 = document.getElementById(`div-${x}-${y+1}`) as HTMLDivElement;
             big_div3.style.border = '1px solid ' + color
+            setColor(color)
+            color === 'red' ? score_red++ : score_blue++;
         }
 
         if (element.style.background === color &&
@@ -102,14 +110,13 @@ export default function Board() {
         ) {
             var big_div4 = document.getElementById(`div-${x - 1}-${y+1}`) as HTMLDivElement;
             big_div4.style.border = '1px solid ' + color
+            setColor(color)
+            color === 'red' ? score_red++ : score_blue++;
         }
-
-
-
 
     }
     return (
-        <div className="square">
+            <div className="square">
             {renderBoard()}
         </div>
     );

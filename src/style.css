@@ -1,60 +1,27 @@
-:root {
-    --len: 0;
-    --wit: 0;
-    --color: 'red';
-    --size-divisor: 3;
-}
-@media screen
-and (min-device-width: 120px)
-and (max-device-width: 160px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (min-resolution: 192dpi) {
 
-    .square {
-        position: absolute;
-        top: 46%;
-        left: 44.5%;
-        z-index: 15;
-        margin: -180px 0 0 -280px;
-        width: 680px;
-        height: 560px;
-        background-color: transparent;
+#root {
+    /*height: 80vh;*/
+    /*width: 100vw;*/
+    display: grid;
+    grid-template-columns: 10% 10% 60% 10% 10% ;
+    grid-template-rows: 20% 10% 97% ;
+    grid-template-areas: ". . . . ." ". . . . ." ". board board board .";
+}
+
+.square {
+       grid-area: board;
+
     }
+
     .col {
         width: 40px;
-        height: 30px;
-        background-color: blueviolet;
+        height: 35px;
+    background-color: blueviolet ;
         border: 1px solid white;
 
     }
     .row {
-        display: flex;
-    }
-
-    .edge-div {
-        position: absolute;
-        width: 10px; /* adjust as needed */
-        height: 8px; /* adjust as needed */
-        background-color: #ff0000;
-        color: blue;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .edge-column {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: #ff0000;
-        color: blue;
-        float: left;
-    }
-
-    .edge-row {
-        display: flex;
-        float: left;
-        margin: 1px;
+      display: flex;
     }
 
     .point {
@@ -70,73 +37,19 @@ and (min-resolution: 192dpi) {
 
     }
 
-    .container {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        height: 45vh; /* Set the height to 40% of the viewport height */
-    }
+    /*.container {*/
+    /*    display: flex;*/
+    /*    justify-content: left;*/
+    /*    align-items: center;*/
+    /*    height: 45vh; !* Set the height to 40% of the viewport height *!*/
+    /*}*/
 
-    .centered {
-        position: absolute;
-        transform: translateY(-50%);
-        left: 0;
-        margin-left: 100px; /* Adjusted margin for computers */
-        padding: 10px; /* Add some padding */
-    }
-}
-@media screen and (max-width: 768px) {
-    .square {
-        width: 90%; /* Adjust square width for smaller screens */
-        height: auto; /* Auto height */
-        margin: 0; /* Remove margin */
-        left: 50%; /* Center horizontally */
-        top: 50%; /* Center vertically */
-        transform: translate(-50%, -50%); /* Center square */
-    }
+    /*.centered {*/
+    /*    position: absolute;*/
+    /*    transform: translateY(-50%);*/
+    /*    left: 0;*/
+    /*    margin-left: 100px; !* Adjusted margin for computers *!*/
+    /*    padding: 10px; !* Add some padding *!*/
+    /*}*/
 
-    .centered {
-        left: 10%; /* Adjust left position for smaller screens */
-    }
-}
-/* Smartphones (portrait and landscape) ----------- */
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: portrait) {
 
-    .square {
-        position: absolute;
-        top: 4%;
-        left: 4%;
-        z-index: 3;
-        margin: -1px 0 0 -2px;
-        width: 1px;
-        height: 5px;
-        background-color: transparent;
-    }
-
-    .container {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        height: 4vh; /* Set the height to 40% of the viewport height */
-    }
-
-    .centered {
-        position: absolute;
-        transform: translateY(-50%);
-        left: 0;
-        margin-left: 10px; /* Adjusted margin for computers */
-        padding: 10px; /* Add some padding */
-    }
-
-    .col {
-        width: 4px;
-        height: 3px;
-        background-color: white;
-        border: 1px solid white;
-
-    }
-}
