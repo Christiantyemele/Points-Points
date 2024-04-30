@@ -29,6 +29,8 @@ display: grid;
     .main-container {
         display: grid;
         background-color: crimson;
+        height: 100dvh;
+        align-items: center;
 
     }
     .scores {
