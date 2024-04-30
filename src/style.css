@@ -31,6 +31,8 @@ display: grid;
         background-color: crimson;
         height: 100dvh;
         align-items: center;
+        min-width: 921px;
+        min-height: 834px;
 
     }
     .scores {
