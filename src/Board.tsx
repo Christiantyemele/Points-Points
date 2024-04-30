@@ -9,10 +9,10 @@ export default function Board() {
     const renderBoard = () => {
         const board = [];
 
-        for (let row = 21; row > 0; --row) {
+        for (let row = 17; row > 0; --row) {
             const rowCells = [];
             const div_iD: DivPosition[] = [];
-            for (let col = 0; col < 25; col++) {
+            for (let col = 0; col < 21; col++) {
                 const divId = `div-${col}-${row}`
                 div_iD.push({x: col, y: row});
                 rowCells.push(
@@ -117,7 +117,7 @@ export default function Board() {
     }
     return (
             <div className="square">
-            {renderBoard()}d
+            {renderBoard()}
         </div>
     );
 }

@@ -1,17 +1,7 @@
 
-/*#root {*/
-/*    !*height: 80vh;*!*/
-/*    !*width: 100vw;*!*/
-/*    display: grid;*/
-/*    grid-template-columns: 10% 10% 60% 10% 10% ;*/
-/*    grid-template-rows: 20% 10% 97% ;*/
-/*    grid-template-areas: ". . . . ." ". . . . ." ". board board board .";*/
-/*}*/
-
 .square {
-grid-area: board;
-
-
+display: grid;
+    justify-self: center;
     }
 
     .col {
@@ -26,9 +16,8 @@ grid-area: board;
     }
 
     .point {
-        /*position: absolute;*/
-        width: 6px; /* adjust as needed */
-        height: 5px; /* adjust as needed */
+        width: 6px;
+        height: 5px;
         background-color: transparent;
         display: flex;
         left: auto;
@@ -39,8 +28,24 @@ grid-area: board;
     }
     .main-container {
         display: grid;
-        grid-template-rows: minmax(8em, 0.5fr);
-        /*grid-template-columns: minmax(10px, 39px);*/
+        background-color: crimson;
+
+    }
+    .scores {
+        display: flex;
+        flex-direction: column;
+    }
+    .red {
+        background-color: blue;
+        align-self: end;
+    }
+    .blue {
+        background-color: black;
+        align-self: flex-start;
+    }
+        /*grid-template-rows: minmax(8em, 10px);
+        grid-template-columns: minmax(10px, 3px);
+        background-color: crimson;
     }
 
     /*.container {*/
