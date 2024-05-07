@@ -2,7 +2,7 @@
 .col {
     width: 40px;
     height: 35px;
-    background-color: gainsboro;
+    background-color: gray;
     border: 1px solid white;
 }
     @media screen and (min-width: 1920px) {
@@ -14,7 +14,6 @@
     }
 
 }
-
 
 .square {
 display: grid;
@@ -33,28 +32,34 @@ display: grid;
         float: left;
         margin: -4px;
         border-radius: 25px;
+        cursor: pointer;
 
     }
     .main-container {
         display: grid;
-        background-color: crimson;
         height: 100dvh;
         align-items: center;
         min-width: 921px;
-        min-height: 834px;
+        min-height: 80px;
+        max-height: 1130px;
 
     }
     .scores {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
     }
     .red {
         background-color: blue;
-        align-self: end;
+        align-self: start;
+        margin-left: 5em;
     }
     .blue {
         background-color: black;
-        align-self: flex-start;
+        align-self: end;
+        margin-right: 9em;
+        max-width: 7em;
     }
         /*grid-template-rows: minmax(8em, 10px);
         grid-template-columns: minmax(10px, 3px);
