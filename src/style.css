@@ -5,7 +5,7 @@
     background-color: gainsboro;
     border: 1px solid white;
 }
-    @media screen and (min-width: 1920px) {
+    @media (min-width: 1920px) {
     .col {
         width: 20px;
         height: 5px;
@@ -15,11 +15,11 @@
 
 }
 
-
 .square {
 display: grid;
     justify-self: center;
     }
+
     .row {
       display: flex;
     }
@@ -33,6 +33,7 @@ display: grid;
         float: left;
         margin: -4px;
         border-radius: 25px;
+        cursor: pointer;
 
     }
     .main-container {

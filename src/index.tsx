@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css'
-import ScoreBlue from './Scores'
+import Score from './Scores'
 import reportWebVitals from './reportWebVitals';
 import Board from "./Board";
 import './index.css'
@@ -11,8 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-
-      <ScoreBlue/>
+      <Score/>
     </React.StrictMode>
 );
 
