@@ -50,8 +50,6 @@ export default function Board() {
         const [, xStr, yStr] = currentId.split("-");
         const x = Number(xStr);
         const y = Number(yStr);
-        console.log(x, y);
-
         // bottom-right check
         var top_right1 = document.querySelector(`#div-${x + 1}-${y}>.point`) as HTMLDivElement;
         var bottom_left1 = document.querySelector(`#div-${x}-${y - 1}>.point`) as HTMLDivElement;
