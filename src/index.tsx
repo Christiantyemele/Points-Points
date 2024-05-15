@@ -1,17 +1,16 @@
-import React from 'react';
+import React, {createContext, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css'
 import Score from './Scores'
 import reportWebVitals from './reportWebVitals';
-import Board from "./Board";
-import './index.css'
+import './index.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-      <Score/>
+        <Score/>
     </React.StrictMode>
 );
 

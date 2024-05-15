@@ -1,14 +1,13 @@
 import Board from "./Board";
 import './index.css'
-
-export default function  Score(color?: string | {}) {
-    let score = {"red": 1, "blue": 1}
-    color === 'red' ? score.red++ : score.blue++;
+import {score} from "./Board";
+import {useCallback} from "react";
+export default function  Score() {
     return (
         <div className="main-container">
                 <div className="scores">
-                    <div className="red"><button className=" btn-xs sm:btn-sm bg-blue-600">{score.red}</button></div>
-                    <div className="blue"><button className=" btn-xs sm:btn-sm bg-red-600">{score.blue}</button>
+                    <div className="red"><button className=" btn-xs sm:btn-sm bg-blue-600">{}</button></div>
+                    <div className="blue"><button className=" btn-xs sm:btn-sm bg-red-600">{score.score_blue}</button>
                     </div>
                 </div>
             <Board/>
@@ -16,4 +15,3 @@ export default function  Score(color?: string | {}) {
 
     )
 }
-export default Score;
