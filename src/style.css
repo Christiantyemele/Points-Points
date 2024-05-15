@@ -62,24 +62,5 @@ display: grid;
         margin-right: 9em;
         max-width: 7em;
     }
-        /*grid-template-rows: minmax(8em, 10px);
-        grid-template-columns: minmax(10px, 3px);
-        background-color: crimson;
-    }
-
-    /*.container {*/
-    /*    display: flex;*/
-    /*    justify-content: left;*/
-    /*    align-items: center;*/
-    /*    height: 45vh; !* Set the height to 40% of the viewport height *!*/
-    /*}*/
-
-    /*.centered {*/
-    /*    position: absolute;*/
-    /*    transform: translateY(-50%);*/
-    /*    left: 0;*/
-    /*    margin-left: 100px; !* Adjusted margin for computers *!*/
-    /*    padding: 10px; !* Add some padding *!*/
-    /*}*/
 
 
