@@ -13,4 +13,4 @@ to  defend and when the one player makes a unit square he has the chance of play
 
 ##
 
-![screenshot](../points-points/public/image.png)
+![screenshot](./public/image.png)
