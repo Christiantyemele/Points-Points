@@ -1,4 +1,3 @@
-import React, {createContext, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css'
 import Score from './Scores'
