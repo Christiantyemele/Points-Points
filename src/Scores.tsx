@@ -1,7 +1,6 @@
 import Board from "./Board";
 import './index.css'
 import {score} from "./Board";
-import {useCallback} from "react";
 export default function  Score() {
     return (
         <div className="main-container">

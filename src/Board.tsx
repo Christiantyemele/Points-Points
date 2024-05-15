@@ -1,9 +1,8 @@
-import React, {createContext, useState} from 'react';
+import React, {useState} from 'react';
 
 export const score = {score_red: 0, score_blue: 0};
 export type DivPosition = {x: number, y: number}
 
-let sharedScore = createContext(score);
 export default function Board() {
 
     const [color, setColor] = useState('red')
@@ -91,7 +90,6 @@ export default function Board() {
             var big_div2 = document.getElementById(`div-${x - 1}-${y}`) as HTMLDivElement;
             big_div2.style.border = '1px solid ' + color
             color === 'red' ? score.score_red++: score.score_blue++;
-            console.log(score)
             setColor(color)
         }
 
@@ -102,7 +100,6 @@ export default function Board() {
             var big_div3 = document.getElementById(`div-${x}-${y + 1}`) as HTMLDivElement;
             big_div3.style.border = '1px solid ' + color
             color === 'red' ? score.score_red++: score.score_blue++;
-            console.log(score)
             setColor(color);
 
         }
@@ -115,7 +112,6 @@ export default function Board() {
             var big_div4 = document.getElementById(`div-${x - 1}-${y + 1}`) as HTMLDivElement;
             big_div4.style.border = '1px solid ' + color
             color === 'red' ? score.score_red++: score.score_blue++;
-            console.log(score)
             setColor(color)
 
         }
