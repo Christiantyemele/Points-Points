@@ -2,7 +2,7 @@
 .col {
     width: 40px;
     height: 35px;
-    background-color: gray;
+    background-color: gainsboro;
     border: 1px solid white;
 }
     @media (min-width: 1920px) {
@@ -32,7 +32,7 @@ display: grid;
         left: auto;
         float: left;
         margin: -4px;
-        border-radius: 25px;
+        border-radius: 30px;
         cursor: pointer;
 
     }
