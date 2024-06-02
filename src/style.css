@@ -9,6 +9,7 @@
 .square {
 display: grid;
     justify-self: center;
+    margin-top: 2em;
     }
 
     .row {
@@ -29,26 +30,27 @@ display: grid;
     }
     .main-container {
         display: grid;
-        height: 100dvh;
-        align-items: center;
-        min-width: 921px;
-        min-height: 80px;
-        max-height: 1130px;
+      align-items: center;
+        min-width: 350px;
+        min-height: 630px;
+
 
     }
     .scores {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: baseline;
+        margin-top: 4em;
     }
     .red {
-        background-color: blue;
         align-self: start;
-        margin-left: 5em;
+        margin-left: 8em;
+        display: flex;
+        column-gap: 40em;
+
     }
+
     .blue {
-        background-color: black;
         align-self: end;
         margin-right: 9em;
         max-width: 7em;
@@ -59,8 +61,8 @@ display: grid;
     {
 
         .col {
-            width: 4px;
-            height: 3px;
+            width: 40px;
+            height: 35px;
             background-color: gainsboro;
             border: 1px solid white;
         }
@@ -68,6 +70,7 @@ display: grid;
         .square {
             display: grid;
             justify-self: center;
+            margin-top: 2em;
         }
 
         .row {
@@ -75,8 +78,8 @@ display: grid;
         }
 
         .point {
-            width: 2px;
-            height: 1px;
+            width: 6px;
+            height: 5px;
             background-color: transparent;
             display: flex;
             left: auto;
@@ -88,23 +91,24 @@ display: grid;
         }
         .main-container {
             display: grid;
-            height: 100dvh;
             align-items: center;
-            min-width: 92px;
-            min-height: 8px;
-            max-height: 113px;
+            max-width: 350px;
+            max-height: 630px;
+
 
         }
         .scores {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+           margin-top: 4em;
+            justify-content: space-around;
             align-items: baseline;
         }
         .red {
             background-color: blue;
             align-self: start;
             margin-left: 5em;
+            display: flex;
+            column-gap: 40em;
         }
         .blue {
             background-color: black;
