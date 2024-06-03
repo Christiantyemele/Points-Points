@@ -59,7 +59,7 @@ display: grid;
     and (device-width: 360px)
     and (device-width: 640px)
         and (-webkit-device-pixel-ratio: 3)
-        and (orientation: landscape) { {
+        and (orientation: landscape) {
 
         .col {
             width: 40px;
@@ -122,5 +122,5 @@ display: grid;
             margin-right: 9em;
             max-width: 7em;
         }
-    }
+
     }
