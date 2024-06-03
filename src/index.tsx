@@ -1,16 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css'
-import Score from './Scores'
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-
+import App from "./App";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <Score/>
+   <App/>
     </React.StrictMode>
 );
 

@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import {useStore} from "./store";
 
-export const score = {score_red: 0, score_blue: 0};
+
 export type DivPosition = {x: number, y: number}
-
-export default function Board() {
+export default function Board () {
+const setscorered = useStore((state) => state.setscorered)
+    const setscoreblue = useStore((state) => state.setscoreblue)
 
     const [color, setColor] = useState('red')
 
@@ -79,7 +81,7 @@ export default function Board() {
             top_right1?.style.background === color) {
             var big_div1 = document.getElementById(`div-${x}-${y}`) as HTMLDivElement;
             big_div1.style.border = '1px solid ' + color
-            color === 'red' ? score.score_red++: score.score_blue++;
+            color === 'red' ? setscorered() : setscoreblue()
             setColor(color)
         }
 
@@ -89,7 +91,7 @@ export default function Board() {
             bottom_right2?.style.background === color) {
             var big_div2 = document.getElementById(`div-${x - 1}-${y}`) as HTMLDivElement;
             big_div2.style.border = '1px solid ' + color
-            color === 'red' ? score.score_red++: score.score_blue++;
+            color === 'red' ? setscorered() : setscoreblue()
             setColor(color)
         }
 
@@ -99,7 +101,7 @@ export default function Board() {
             top_right3?.style.background === color) {
             var big_div3 = document.getElementById(`div-${x}-${y + 1}`) as HTMLDivElement;
             big_div3.style.border = '1px solid ' + color
-            color === 'red' ? score.score_red++: score.score_blue++;
+            color === 'red' ? setscorered() : setscoreblue()
             setColor(color);
 
         }
@@ -111,7 +113,7 @@ export default function Board() {
         ) {
             var big_div4 = document.getElementById(`div-${x - 1}-${y + 1}`) as HTMLDivElement;
             big_div4.style.border = '1px solid ' + color
-            color === 'red' ? score.score_red++: score.score_blue++;
+            color === 'red' ? setscorered() : setscoreblue()
             setColor(color)
 
         }
