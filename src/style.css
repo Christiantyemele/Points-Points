@@ -59,12 +59,7 @@ display: grid;
     and (device-width: 360px)
     and (device-width: 640px)
         and (-webkit-device-pixel-ratio: 3)
-        and (orientation: landscape) {
-
-    }
-
-
-    {
+        and (orientation: landscape) { {
 
         .col {
             width: 40px;
@@ -95,6 +90,7 @@ display: grid;
             cursor: pointer;
 
         }
+
         .main-container {
             display: grid;
             align-items: center;
@@ -104,12 +100,14 @@ display: grid;
 
 
         }
+
         .scores {
             display: flex;
-           margin-top: 6em;
+            margin-top: 6em;
             justify-content: space-around;
             align-items: baseline;
         }
+
         .red {
             background-color: blue;
             align-self: start;
@@ -117,11 +115,12 @@ display: grid;
             display: flex;
             column-gap: 40em;
         }
+
         .blue {
             background-color: black;
             align-self: end;
             margin-right: 9em;
             max-width: 7em;
         }
-
+    }
     }
