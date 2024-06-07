@@ -1,5 +1,8 @@
+![Logo](../src/logo.jpg)
 # Dot Game
+
 game's main source code is found on the develop branch. <br />
+
 
 # Features
 - [ ] multiplayer functionality on wireless network
