@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    runs-on: [self-hosted, BEWARNED]
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
